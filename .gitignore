@@ -1,0 +1,12 @@
+# JavaScript node dependencies
+/node_modules/
+
+#VS Code setting files
+.vscode/
+
+#reports
+/mochawesome-report/
+/reports
+
+#testdata
+/uploads
