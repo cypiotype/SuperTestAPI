@@ -17,8 +17,7 @@ You need to have the following installed in your machine:
 
 ## Talking more about the Scenarios Covered in this project:
 
-- [Mochawesome reporter][mochawesome-wevbsite] is used to generate the reports and show summary of the tests. Its quite useful report as it shows the test description along with the tests and the time taken to run the tests.
+- [Mochawesome reporter][mochawesome-website] is used to generate the reports and show summary of the tests. Its quite useful report as it shows the test description along with the tests and the time taken to run the tests.
 
-<img src="assets/mochawesome-report.png"/>
 # SuperTestAPI
 # SuperTestAPI
