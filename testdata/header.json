@@ -1,0 +1,14 @@
+{
+    "qa": 
+    { 
+        "X-TENANT-DOMAIN": "qa.galencloud.com",
+        "X-APP-TYPE":"DEVICE",
+		"X-API-VERSION": 3
+    },
+    "test":
+    {
+        "X-TENANT-DOMAIN": "test.galencloud.com",
+        "X-APP-TYPE":"DEVICE",
+		"X-API-VERSION": 3
+    }
+}

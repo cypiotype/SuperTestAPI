@@ -1,0 +1,108 @@
+{
+    "createUser":  
+    {        
+         "user": {
+                "firstName": "Testing",
+                "lastName": "Patient",
+                "emailAddress": "autotest+Apiuser@galendata.com",
+                "tenant": {
+                    "tenantId": "demotenant-1"
+                },        
+                "roles": [
+                 { 
+                    "defaultRole": true,
+                    "role": "Patient",
+                    "practice": {
+                                "name": "Kaiser Orange County",
+                                "emailAddress": "orangecount@kaiser.com",                        
+                                "status": "Active",                        
+                                "practiceId": "cfe2b981-5f6f-4471-afc8-6c6ac945b554",
+                                "tenantId": "demotenant-1",
+                                "supplierId": "99bac27b-3988-410c-80a3-cdb15ab0b0c4",
+                                "active": true
+                            },
+                     "supplier":
+                     {
+                                "name": "Kaiser Healthcare",
+                                "emailAddress": "healthcare@kaiser.com",                       
+                                "status": "Active",                        
+                                "supplierId": "99bac27b-3988-410c-80a3-cdb15ab0b0c4",
+                                "tenantId": "demotenant-1",
+                                "active": true
+                            }
+                    },
+                    {
+                        "role": "TenantAdmin",
+                        "practice": null,
+                        "supplier": null
+                    },
+                    {
+                    "role":"Patient",
+                    "practice": {
+                                "name": "Kaiser Orange County",
+                                "emailAddress": "orangecount@kaiser.com",                        
+                                "status": "Active",                        
+                                "practiceId": "cfe2b981-5f6f-4471-afc8-6c6ac945b554",
+                                "tenantId": "demotenant-1",
+                                "supplierId": "99bac27b-3988-410c-80a3-cdb15ab0b0c4",
+                                "active": true
+                            },
+                     "supplier":
+                     {
+                                "name": "Kaiser Healthcare",
+                                "emailAddress": "healthcare@kaiser.com",                       
+                                "status": "Active",                        
+                                "supplierId": "99bac27b-3988-410c-80a3-cdb15ab0b0c4",
+                                "tenantId": "demotenant-1",
+                                "active": true
+                     }
+                    },
+                    {
+                    "role":"PracticeAdmin",
+                    "practice": {
+                                "name": "Kaiser Orange County",
+                                "emailAddress": "orangecount@kaiser.com",                        
+                                "status": "Active",                        
+                                "practiceId": "cfe2b981-5f6f-4471-afc8-6c6ac945b554",
+                                "tenantId": "demotenant-1",
+                                "supplierId": "99bac27b-3988-410c-80a3-cdb15ab0b0c4",
+                                "active": true
+                            },
+                     "supplier":
+                     {
+                                "name": "Kaiser Healthcare",
+                                "emailAddress": "healthcare@kaiser.com",                       
+                                "status": "Active",                        
+                                "supplierId": "99bac27b-3988-410c-80a3-cdb15ab0b0c4",
+                                "tenantId": "demotenant-1",
+                                "active": true
+                     }
+                    }
+                    ]
+            },
+            "password": "Password@123"	
+        },    
+        "searchNewUser":
+          [  
+            {   
+                "key":"emailAddress",
+                "operator":"Like",
+                "value":"autotest+Apiuser@galendata.com",
+                "isCustomField":false  
+            }
+          ],
+        "updatePassword":        
+            {
+                "newPassword": "Password@1234",
+                "newConfirmPassword": "Password@1234",                
+                "forcePasswordReset": false
+            },
+        "usedIds":
+            [
+                "28d3d597-7d1a-49c5-a0cc-22ec8c84efe0",
+                "4b147af5-48fa-414f-b375-b67e1d62cc23",
+                "ea6d095d-1b0d-4a98-a55a-aa964641b394",
+                "3de5f08c-58ec-4320-9a8d-d4cfebada690"
+            ]  
+        
+}

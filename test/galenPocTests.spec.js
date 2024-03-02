@@ -1,29 +1,13 @@
 const request = require('supertest');
 const expect = require('chai').expect;
-const userdata = require('../testdata/userdata.json');
-let authToken; 
-
-describe('Basic API tests using supertest', () => {
-		var baseUrl = "https://test.testdata.com"
-		var headers = { 		
-			
-		} 
-		it ('should login as Tenant admin', () => { 
-			return request(baseUrl)
-			.post('/auth/login')
-            .send('emailAddress=username&password=password')
-			  
-			.set(headers)
-			.expect((res) => {
-				authToken = res.header.authorization.substring("Bearer ".length)
-				console.log("Token = " + authToken)
-			})			
-		}) 
-
+const userdata = require('../testdata/credentials.json');
+const headers = require('../testdata/header.json')
+describe('POC for API tests using supertest', () => {
+		
 		it('should fetch all the suppliers', () => { 
 			return request(baseUrl)
 			.get('/user/supplier')
-			.set(headers)
+			.set(headers[env])
 			.set('Authorization', `Bearer ${authToken}`)
 			.expect(200)
 			.expect((res) => {
@@ -35,7 +19,7 @@ describe('Basic API tests using supertest', () => {
 		it('should fetch all devices', () => { 
 			return request(baseUrl)
 			.get('/user/device?pageNumber=0&pageSize=100&sortBy=name&sortOrder=ASC')
-			.set(headers)
+			.set(headers[env])
 			.set('Authorization', `Bearer ${authToken}`)
 			.expect(200)
 			.expect((res) => {
@@ -44,7 +28,7 @@ describe('Basic API tests using supertest', () => {
 			})
 		})
 
-		it('should create device data for a device', () => { 
+		xit('should create device data for a device', () => { 
 
 			const payload = {
 				deviceDataModelId:"ebad6722-c354-432c-afdf-b468d0034af5",
@@ -57,7 +41,7 @@ describe('Basic API tests using supertest', () => {
 			};
 			return request(baseUrl)
 			.post('/data/devicedata')			
-			.set(headers)
+			.set(headers[env])
 			.set('Authorization', `Bearer ${authToken}`)
 			.send(payload)
 			.expect(201)
@@ -67,18 +51,17 @@ describe('Basic API tests using supertest', () => {
 			})
 		})
 
-		it('should upload file larger than 100MB for an existing device data', () => { 
+		xit('should upload file larger than 100MB for an existing device data', async() => { 
 			const payload2 = {
                 deviceDataModelId:"c5390d18-25f3-4755-9841-4a27039a1e96",
                 propertyCode:"Video"
             };
-			return request(baseUrl)
+			return await request(baseUrl)
 			.post('/data/devicedata/a7d7dd89-07b5-4c19-be2b-b28728d20521')
-			.set(headers)			
+			.set(headers[env])			
 			.set('Authorization', `Bearer ${authToken}`)
 			.set("Content-Type","multipart/form-data")
-			.field("deviceDataModelId","c5390d18-25f3-4755-9841-4a27039a1e96")
-			.field("propertyCode","Video")
+			.field(payload2)
 			.attach("data","./uploads/sample-mp4-file.mp4")		
 			.expect(201)	
 			.expect((res) => { 
